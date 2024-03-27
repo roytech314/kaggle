@@ -2,13 +2,12 @@
 
 import numpy as np
 import pandas as pd
-import re
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
-# data_initialization.pyからデータをインポート
-from data_initialization import train, test
+# 訓練データとテストデータをインポート
+from data_import import train, test
 
 # データ前処理と特徴量エンジニアリング
 

@@ -1,5 +1,8 @@
-# CSV
-*.csv
+# data
+*/data/*
 
 # result
-result/*
+*/result/*
+
+# __pycache__
+__pycache__/

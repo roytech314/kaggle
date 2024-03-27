@@ -4,8 +4,8 @@ import datetime
 import pandas as pd
 import numpy as np
 
-# data_initialization.pyからtestデータをインポート
-from data_initialization import test
+# testデータをインポート
+from data_import import test
 
 # model_training_evaluation.pyからモデルをインポート
 from model_training_evaluation import model
@@ -25,4 +25,4 @@ d = now.strftime("%Y%m%d%H%M%S")
 
 PassengerId = np.array(test["PassengerId"]).astype(int)
 my_solution = pd.DataFrame(test_predict, PassengerId, columns=["Survived"])
-my_solution.to_csv(f"./results/randam_forest_{d}.csv", index_label=["PassengerId"])
+my_solution.to_csv(f"./result/randam_forest_{d}.csv", index_label=["PassengerId"])
