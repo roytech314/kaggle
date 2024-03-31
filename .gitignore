@@ -9,3 +9,6 @@ __pycache__/
 
 # .gitkeepは無視しない
 !.gitkeep
+
+# .gitkeepは無視しない
+*/*.png
