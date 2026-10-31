@@ -1,0 +1,240 @@
+{
+  "run_id": "model_comparison_20261031T025637Z",
+  "metric": "RMSLE",
+  "validation_starts": [
+    "2016-08-01",
+    "2016-12-16",
+    "2017-04-01",
+    "2017-07-31"
+  ],
+  "training_policy": "era_expanding",
+  "warmup_days": 56,
+  "features": [
+    "store_nbr",
+    "family",
+    "onpromotion",
+    "weekday",
+    "day",
+    "month",
+    "year",
+    "dayofyear",
+    "lag_16",
+    "lag_21",
+    "lag_28",
+    "lag_35",
+    "lag_56",
+    "rolling_mean_7_shift_16",
+    "rolling_mean_28_shift_16"
+  ],
+  "target": "log1p(sales)",
+  "baseline_window": 28,
+  "lightgbm_parameters": {
+    "objective": "regression",
+    "metric": "rmse",
+    "learning_rate": 0.05,
+    "num_leaves": 31,
+    "min_data_in_leaf": 100,
+    "verbosity": -1,
+    "num_threads": 4,
+    "seed": 42,
+    "deterministic": true,
+    "force_col_wise": true
+  },
+  "lightgbm_rounds": 300,
+  "random_forest_parameters": {
+    "n_estimators": 100,
+    "max_depth": 18,
+    "min_samples_leaf": 20,
+    "max_features": 0.8,
+    "bootstrap": true,
+    "max_samples": 0.3,
+    "n_jobs": 4,
+    "random_state": 42
+  },
+  "categorical_handling": {
+    "lightgbm": "native",
+    "random_forest": "one-hot, fit on train only"
+  },
+  "numeric_missing_handling": {
+    "lightgbm": "native",
+    "random_forest": "median fitted on train only"
+  },
+  "rows": [
+    {
+      "validation_start": "2016-08-01",
+      "validation_end": "2016-08-16",
+      "train_start": "2016-07-04",
+      "train_end": "2016-07-31",
+      "train_rows": 49896,
+      "validation_rows": 28512,
+      "model": "baseline",
+      "rmsle": 0.5118041982618693,
+      "fit_predict_seconds": 0.024742707959376276
+    },
+    {
+      "validation_start": "2016-08-01",
+      "validation_end": "2016-08-16",
+      "train_start": "2016-02-26",
+      "train_end": "2016-07-31",
+      "train_rows": 279774,
+      "validation_rows": 28512,
+      "model": "lightgbm",
+      "rmsle": 0.4716802714616606,
+      "fit_predict_seconds": 3.4413015409372747
+    },
+    {
+      "validation_start": "2016-08-01",
+      "validation_end": "2016-08-16",
+      "train_start": "2016-02-26",
+      "train_end": "2016-07-31",
+      "train_rows": 279774,
+      "validation_rows": 28512,
+      "model": "random_forest",
+      "rmsle": 0.47100721304778365,
+      "fit_predict_seconds": 15.90588358300738
+    },
+    {
+      "validation_start": "2016-12-16",
+      "validation_end": "2016-12-31",
+      "train_start": "2016-11-18",
+      "train_end": "2016-12-15",
+      "train_rows": 49896,
+      "validation_rows": 26730,
+      "model": "baseline",
+      "rmsle": 0.6254736957800356,
+      "fit_predict_seconds": 0.02078791707754135
+    },
+    {
+      "validation_start": "2016-12-16",
+      "validation_end": "2016-12-31",
+      "train_start": "2016-02-26",
+      "train_end": "2016-12-15",
+      "train_rows": 523908,
+      "validation_rows": 26730,
+      "model": "lightgbm",
+      "rmsle": 0.6055596722888116,
+      "fit_predict_seconds": 4.869177749962546
+    },
+    {
+      "validation_start": "2016-12-16",
+      "validation_end": "2016-12-31",
+      "train_start": "2016-02-26",
+      "train_end": "2016-12-15",
+      "train_rows": 523908,
+      "validation_rows": 26730,
+      "model": "random_forest",
+      "rmsle": 0.6814684182578505,
+      "fit_predict_seconds": 37.32733116601594
+    },
+    {
+      "validation_start": "2017-04-01",
+      "validation_end": "2017-04-16",
+      "train_start": "2017-03-04",
+      "train_end": "2017-03-31",
+      "train_rows": 49896,
+      "validation_rows": 28512,
+      "model": "baseline",
+      "rmsle": 0.5608205724814932,
+      "fit_predict_seconds": 0.023633457953110337
+    },
+    {
+      "validation_start": "2017-04-01",
+      "validation_end": "2017-04-16",
+      "train_start": "2016-02-26",
+      "train_end": "2017-03-31",
+      "train_rows": 711018,
+      "validation_rows": 28512,
+      "model": "lightgbm",
+      "rmsle": 0.5167247188873224,
+      "fit_predict_seconds": 7.337261082953773
+    },
+    {
+      "validation_start": "2017-04-01",
+      "validation_end": "2017-04-16",
+      "train_start": "2016-02-26",
+      "train_end": "2017-03-31",
+      "train_rows": 711018,
+      "validation_rows": 28512,
+      "model": "random_forest",
+      "rmsle": 0.5187878171488084,
+      "fit_predict_seconds": 58.352421250077896
+    },
+    {
+      "validation_start": "2017-07-31",
+      "validation_end": "2017-08-15",
+      "train_start": "2017-07-03",
+      "train_end": "2017-07-30",
+      "train_rows": 49896,
+      "validation_rows": 28512,
+      "model": "baseline",
+      "rmsle": 0.531130405730008,
+      "fit_predict_seconds": 0.027394624892622232
+    },
+    {
+      "validation_start": "2017-07-31",
+      "validation_end": "2017-08-15",
+      "train_start": "2016-02-26",
+      "train_end": "2017-07-30",
+      "train_rows": 926640,
+      "validation_rows": 28512,
+      "model": "lightgbm",
+      "rmsle": 0.4148895991677434,
+      "fit_predict_seconds": 9.314239041996188
+    },
+    {
+      "validation_start": "2017-07-31",
+      "validation_end": "2017-08-15",
+      "train_start": "2016-02-26",
+      "train_end": "2017-07-30",
+      "train_rows": 926640,
+      "validation_rows": 28512,
+      "model": "random_forest",
+      "rmsle": 0.44360328540443206,
+      "fit_predict_seconds": 90.59162800002377
+    }
+  ],
+  "summary": [
+    {
+      "model": "baseline",
+      "mean_rmsle": 0.5573072180633516,
+      "pooled_rmsle": 0.5578482515110355,
+      "std_rmsle": 0.04305450806406873,
+      "wins_vs_baseline": 0,
+      "total_fit_predict_seconds": 0.0965587078826502
+    },
+    {
+      "model": "lightgbm",
+      "mean_rmsle": 0.5022135654513845,
+      "pooled_rmsle": 0.5053124012504836,
+      "std_rmsle": 0.06972938494971763,
+      "wins_vs_baseline": 4,
+      "total_fit_predict_seconds": 24.961979415849783
+    },
+    {
+      "model": "random_forest",
+      "mean_rmsle": 0.5287166834647187,
+      "pooled_rmsle": 0.5340820277173054,
+      "std_rmsle": 0.09220405139390894,
+      "wins_vs_baseline": 3,
+      "total_fit_predict_seconds": 202.177263999125
+    }
+  ],
+  "input_sha256": "99a1b7f4241821df10fa71f23abdd71c634f71f901e3cab1400c0f0c583f862c",
+  "python": "3.14.6",
+  "libraries": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "lightgbm": "4.7.0",
+    "scikit-learn": "1.9.1"
+  },
+  "code_sha256": {
+    "compare_models.py": "42a7c65aa61ca2be48577b41fc21c51d1011b747caf7fcfe0d4a3073607b1b9e",
+    "random_forest_model.py": "8cf993d11974a55fe79ce114ad3664045618533043223ae5bb2b500f7bf0ba0c",
+    "lightgbm_model.py": "2689878ab9e62fee97310e19abe2fa19d9833fcd3047ca6f5d61b3f13f2c8e68",
+    "features.py": "ba6f114d517713cc11fdf2a5900bfa5706f3e411fedd6fb681fa50821498b08d",
+    "backtest.py": "3c72ff9bf119bae49842f83bf995f674c3515b01f51747775c0ece8b5402ee62",
+    "baseline.py": "01bd87f7c912145d76782b3443b62d1ea181e3e93a8a477e5cc0f46a06f70822",
+    "evaluation.py": "3a300f5b61142052d58b675f56d58a5892797e497104657fac21b0c9f98b3862",
+    "uv.lock": "6522798e40843b38cc8b3aae5ca403d738f4ab504e4fe8b06dba6ed1d220339d"
+  }
+}
