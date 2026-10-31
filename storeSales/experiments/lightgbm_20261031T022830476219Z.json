@@ -1,0 +1,106 @@
+{
+  "run_id": "lightgbm_20261031T022830476219Z",
+  "metric": "RMSLE",
+  "baseline_parameters": {
+    "window": 28
+  },
+  "scores": {
+    "baseline": 0.531130405730008,
+    "calendar_promotion": 0.4686838750366598,
+    "calendar_promotion_lags": 0.4238631726613868,
+    "calendar_promotion_lags_rolling": 0.41968104538685364
+  },
+  "validation_start": "2017-07-31",
+  "validation_end": "2017-08-15",
+  "validation_rows": 28512,
+  "train_start": "2016-01-01",
+  "train_end": "2017-07-30",
+  "train_rows": 1026432,
+  "horizon": 16,
+  "lags": [
+    16,
+    21,
+    28,
+    35,
+    56
+  ],
+  "rolling_windows": [
+    7,
+    28
+  ],
+  "parameters": {
+    "objective": "regression",
+    "metric": "rmse",
+    "learning_rate": 0.05,
+    "num_leaves": 31,
+    "min_data_in_leaf": 100,
+    "verbosity": -1,
+    "num_threads": 4,
+    "seed": 42,
+    "deterministic": true,
+    "force_col_wise": true
+  },
+  "rounds": 300,
+  "features": {
+    "calendar_promotion": [
+      "store_nbr",
+      "family",
+      "onpromotion",
+      "weekday",
+      "day",
+      "month",
+      "year",
+      "dayofyear"
+    ],
+    "calendar_promotion_lags": [
+      "store_nbr",
+      "family",
+      "onpromotion",
+      "weekday",
+      "day",
+      "month",
+      "year",
+      "dayofyear",
+      "lag_16",
+      "lag_21",
+      "lag_28",
+      "lag_35",
+      "lag_56"
+    ],
+    "calendar_promotion_lags_rolling": [
+      "store_nbr",
+      "family",
+      "onpromotion",
+      "weekday",
+      "day",
+      "month",
+      "year",
+      "dayofyear",
+      "lag_16",
+      "lag_21",
+      "lag_28",
+      "lag_35",
+      "lag_56",
+      "rolling_mean_7_shift_16",
+      "rolling_mean_28_shift_16"
+    ]
+  },
+  "python": "3.14.6",
+  "libraries": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "lightgbm": "4.7.0"
+  },
+  "input_sha256": "99a1b7f4241821df10fa71f23abdd71c634f71f901e3cab1400c0f0c583f862c",
+  "code_sha256": {
+    "evaluate.py": "9a1924c56663ef801d836761862a8f44e58311e67e82ceb999f352815f97dcd8",
+    "features.py": "ba6f114d517713cc11fdf2a5900bfa5706f3e411fedd6fb681fa50821498b08d",
+    "evaluation.py": "3a300f5b61142052d58b675f56d58a5892797e497104657fac21b0c9f98b3862",
+    "lightgbm_model.py": "2689878ab9e62fee97310e19abe2fa19d9833fcd3047ca6f5d61b3f13f2c8e68",
+    "baseline.py": "01bd87f7c912145d76782b3443b62d1ea181e3e93a8a477e5cc0f46a06f70822",
+    "uv.lock": "056bcc578a66a7cb2c753203a9a1474ad21ba96f9b798e1f2c930b580bf24471",
+    "experiment_history.py": "90ea30a89096dcc6ea1a20e5689ca180ce3deaae6c58bab39f77607f02425e9f",
+    "pyproject.toml": "61f1b4ebfc1f993d274c2861473b821c0061a625966a2ece8e58d8f4ca05ed5b",
+    ".python-version": "a876e0b10411037a012498b9fe18d9bc1df32ed8b722a13564dc944ddcfd9135"
+  }
+}

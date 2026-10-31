@@ -5,6 +5,7 @@ description = "Local experiments for Kaggle Store Sales forecasting"
 readme = "README.md"
 requires-python = ">=3.14,<3.15"
 dependencies = [
+    "lightgbm>=4.6,<5",
     "numpy>=1.26,<3",
     "pandas>=2.2,<3",
 ]
