@@ -1,6 +1,6 @@
 # モジュール分割案
 
-現在の実行入口は `baseline.py`。モデル比較や特徴量追加に向け、処理を以下の4モジュールへ分割する。
+現在の実行入口は曜日平均・提出出力用の `baseline.py` と、LightGBM比較評価用の `evaluate.py`。共通評価は `evaluation.py`、時系列特徴量は `features.py`、LightGBMは `lightgbm_model.py` に分離している。以下は今後の統合案。
 
 | モジュール | 責任 |
 |---|---|
