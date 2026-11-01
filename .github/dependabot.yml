@@ -1,0 +1,16 @@
+# 通常更新はDependabotで管理し、Renovateとの重複を避ける。
+version: 2
+updates:
+  - package-ecosystem: "uv"
+    directory: "/storeSales"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Tokyo"
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        applies-to: "version-updates"
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
